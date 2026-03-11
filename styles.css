@@ -1350,3 +1350,231 @@ body {
 
 /* ── SELECTION ── */
 ::selection { background: rgba(232,112,90,0.25); color: var(--text); }
+
+/* Elementos exclusivos do PDF — ocultos na web */
+.print-only { display: none; }
+
+/* ── BOTÃO EXPORTAR PDF ── */
+.btn-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--coral);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+  font-family: var(--font);
+}
+.btn-export:hover { background: var(--coral-dark); }
+
+/* ============================================================
+   ESTILOS DE IMPRESSÃO / PDF
+   ============================================================ */
+@media print {
+
+  /* Configuração de página */
+  @page { size: A4; margin: 15mm 15mm 18mm 15mm; }
+  @page :first { margin-top: 0; }
+
+  /* Ocultar elementos interativos e da web */
+  .nav,
+  .hero-section-bg,
+  .hero-visual,
+  .hero-cta,
+  .scroll-top,
+  .btn-export,
+  .nav-hamburger,
+  .process-legend,
+  body > div[style*="position: fixed"][style*="height: 2px"] {
+    display: none !important;
+  }
+
+  /* Preservar cores de fundo */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Garantir visibilidade de tudo — anular animações */
+  .fade-up,
+  .fade-up.delay-1,
+  .fade-up.delay-2,
+  .fade-up.delay-3 {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html, body { font-size: 11pt; background: white; overflow: visible; }
+
+  /* ── CAPA ── */
+  .hero-section {
+    min-height: 100vh;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    page-break-after: always;
+    break-after: page;
+    background: #111118 !important;
+  }
+  .hero { grid-template-columns: 1fr !important; min-height: auto; padding: 60px 40px !important; text-align: center; }
+  .hero-title       { font-size: 56pt !important; }
+  .hero-subtitle    { font-size: 16pt !important; color: rgba(255,255,255,0.65) !important; }
+  .hero-description { font-size: 12pt !important; margin: 0 auto !important; max-width: 100% !important; }
+  .hero-badge       { margin: 0 auto 2rem !important; }
+
+  /* ── SEÇÕES ── */
+  .section   { padding: 40px 0 !important; }
+  .container { max-width: 100% !important; padding: 0 8mm !important; }
+
+  /* Quebra de página antes de cada seção */
+  #o-que-e, #torres, #operacoes, #time,
+  #processo, #pilares, #kpis, #roadmap, #governanca {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .section-tag { background: #FDF0ED !important; color: #E8705A !important; }
+  .section-dark .section-tag { background: rgba(232,112,90,0.15) !important; color: #F2957F !important; }
+
+  /* ── GRIDS ── */
+  .grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr) !important; gap: 10px !important; }
+
+  /* ── CARDS ── */
+  .card { border: 1px solid #E8E8EF !important; box-shadow: none !important; padding: 12px !important; }
+  .card:hover { transform: none !important; }
+  .not-section { padding: 16px !important; }
+  .not-card { padding: 10px !important; }
+
+  /* ── TORRES ── */
+  .towers-container { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  .towers-divider   { display: none !important; }
+  .tower            { padding: 16px !important; }
+  .tower-primary {
+    background: linear-gradient(135deg, rgba(232,112,90,0.15) 0%, rgba(232,112,90,0.05) 100%) !important;
+    border: 1px solid rgba(232,112,90,0.35) !important;
+  }
+
+  /* ── TIME ── */
+  .section-coral { background: #E8705A !important; }
+  #time .section-header { break-after: avoid !important; page-break-after: avoid !important; margin-bottom: 1.5rem !important; }
+  #time .grid-3         { break-before: avoid !important; page-break-before: avoid !important; }
+  .team-card {
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    padding: 14px !important;
+    break-inside: avoid;
+  }
+  .team-resp li, .team-purpose, .team-profile { font-size: 9pt !important; }
+
+  /* ── PROCESSO — ocultar interativo, mostrar versão PDF ── */
+  .process-flow-wrapper, #stepCardArea { display: none !important; }
+  .print-only { display: block !important; }
+
+  #print-process-all { display: flex !important; flex-direction: column; gap: 10px; }
+
+  .print-step-row {
+    display: grid !important;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #E8E8EF;
+    border-radius: 10px;
+    border-left: 3px solid #E8705A;
+    break-inside: avoid;
+  }
+  .print-step-left {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .print-step-circle {
+    width: 80px; height: 80px;
+    background: #E8705A !important;
+    border-radius: 50%;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    flex-shrink: 0;
+  }
+  .print-step-circle--last { background: linear-gradient(135deg, #E8705A 0%, #C94040 100%) !important; }
+  .print-step-num  { font-size: 7pt; font-weight: 600; opacity: 0.75; letter-spacing: 0.05em; display: block; }
+  .print-step-name { font-size: 8pt; font-weight: 700; line-height: 1.2; display: block; }
+  .print-sync-note {
+    font-size: 7pt; font-weight: 600; color: #3A74A8;
+    background: rgba(91,155,213,0.12); border: 1px solid rgba(91,155,213,0.3);
+    border-radius: 4px; padding: 3px 6px; text-align: center; line-height: 1.3;
+  }
+  .print-step-right { padding: 2px 0; }
+  .print-step-title { font-size: 10pt; font-weight: 700; color: #1A1A2E; margin-bottom: 5px; }
+  .print-step-desc  { font-size: 8.5pt; color: #6B6B80; line-height: 1.55; margin-bottom: 8px; }
+  .print-step-items { list-style: none; display: flex; flex-direction: column; gap: 3px; margin-bottom: 8px; }
+  .print-step-items li { font-size: 8pt; color: #4A4A5E; padding-left: 10px; position: relative; line-height: 1.4; }
+  .print-step-items li::before { content: '·'; position: absolute; left: 0; color: #E8705A; font-weight: 700; }
+  .print-step-output { font-size: 8pt; font-weight: 600; color: #C9573F; background: #FDF0ED; border-radius: 5px; padding: 5px 8px; display: inline-block; }
+  .print-step-output--success { color: #2E7D5C; background: rgba(76,175,125,0.12); }
+
+  /* ── PILARES ── */
+  .section-dark { background: #1C1C26 !important; color: white !important; }
+  .pilares-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .pilar-card { background: #252532 !important; border: 1px solid #2E2E3E !important; padding: 14px !important; break-inside: avoid; }
+  .pilar-content p { font-size: 9pt !important; }
+
+  /* ── KPIs — todas as abas visíveis ── */
+  .tab-buttons { display: none !important; }
+  .tab-content { display: block !important; margin-bottom: 16px !important; }
+  .tab-content::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #E8705A;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #E8E8EF;
+  }
+  .kpi-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 8px !important; }
+  .kpi-card { padding: 12px !important; break-inside: avoid; box-shadow: none !important; }
+  .kpi-desc { font-size: 8pt !important; }
+  .kpi-meta { font-size: 7.5pt !important; }
+
+  /* ── ROADMAP ── */
+  .roadmap-timeline { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .timeline-connector { display: none !important; }
+  .horizon { break-inside: avoid; }
+  .horizon-body { padding: 12px 16px !important; }
+  .horizon-activities li { font-size: 9pt !important; }
+
+  /* ── GOVERNANÇA ── */
+  .gov-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+  .ritual-item   { padding: 10px !important; break-inside: avoid; }
+  .decision-level{ padding: 8px !important; break-inside: avoid; }
+
+  /* ── OPS GRID ── */
+  .ops-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+
+  /* ── FOOTER WEB ── */
+  .footer { border-top: 1px solid #2E2E3E !important; background: #111118 !important; padding: 12px 0 !important; }
+  .footer-meta { align-items: flex-start !important; }
+  .footer-meta span { font-size: 8pt !important; }
+
+  /* Evitar quebra interna */
+  .card-feature, .not-card, .tower, .kpi-card,
+  .pilar-card, .ritual-item, .challenge-item,
+  .value-item, .decision-level { break-inside: avoid; }
+}

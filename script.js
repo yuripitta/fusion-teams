@@ -121,6 +121,39 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  /* ── EXPORTAR PDF ── */
+  const btnExport = document.getElementById('btnExport');
+  if (btnExport) {
+    btnExport.addEventListener('click', () => {
+      // 1. Tornar todos os fade-up visíveis
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+
+      // 2. Guardar aba ativa dos KPIs e mostrar todas
+      const activeTab = document.querySelector('.tab-content.active');
+      const activeTabId = activeTab ? activeTab.id : null;
+      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'block');
+
+      // 3. Gerar visão de processo exclusiva para PDF
+      const printProcess = buildPrintProcessView();
+
+      // 4. Imprimir após DOM estabilizar
+      setTimeout(() => {
+        window.print();
+
+        // 5. Restaurar estado da web após impressão
+        if (printProcess) printProcess.remove();
+        document.querySelectorAll('.tab-content').forEach(c => {
+          c.style.display = '';
+          c.classList.remove('active');
+        });
+        if (activeTabId) {
+          const el = document.getElementById(activeTabId);
+          if (el) el.classList.add('active');
+        }
+      }, 300);
+    });
+  }
+
 
   /* ── SMOOTH SCROLL for anchor links ── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -149,6 +182,52 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* ── DADOS DAS ETAPAS (escopo global para reuso no PDF) ── */
+const PROCESS_STEPS = [
+  {
+    num: '01',
+    name: 'Mapeamento',
+    desc: 'Imersão nas operações com reuniões de mapeamento de processos, dores e oportunidades. Entrevistas em campo e análise de dados reais.',
+    items: ['Jornadas operacionais ponta a ponta', 'Identificação de gargalos e perdas', 'Benchmarks e referências setoriais'],
+    output: 'Mapa de oportunidades priorizado',
+    success: false
+  },
+  {
+    num: '02',
+    name: 'Priorização',
+    desc: 'Priorização das oportunidades com base em impacto operacional, esforço e alinhamento estratégico. Decisão coletiva com o time.',
+    items: ['Matriz impacto vs. esforço', 'Alinhamento com liderança', 'Definição do escopo do sprint'],
+    output: 'Backlog priorizado do time',
+    success: false,
+    sync: true
+  },
+  {
+    num: '03',
+    name: 'Ideação',
+    desc: 'Co-criação de ideias de soluções com o time multidisciplinar e especialistas de campo. Protótipos rápidos e validação de hipóteses.',
+    items: ['Workshops de co-criação', 'Prototipação de baixa fidelidade', 'Validação de hipóteses com usuários'],
+    output: 'Conceito de solução validado',
+    success: false
+  },
+  {
+    num: '04',
+    name: 'Desenvolvimento MVP',
+    desc: 'Ciclo de desenvolvimento do MVP com sprints curtos e feedback constante dos operadores de campo. Iterações rápidas até validação.',
+    items: ['Sprints de 2 semanas', 'Testes em ambiente controlado', 'Ajustes contínuos com o SME'],
+    output: 'MVP funcional em campo',
+    success: false,
+    sync: true
+  },
+  {
+    num: '05',
+    name: 'Go Live MVP',
+    desc: 'Go live, testes da solução em produção e medição de resultados reais. Preparação para escala ou novo ciclo de iteração.',
+    items: ['Lançamento em escala piloto', 'Monitoramento de KPIs operacionais', 'Documentação e transferência de conhecimento'],
+    output: 'Solução em produção + aprendizados',
+    success: true
+  }
+];
+
 /* ── BUILD PROCESS FLOW ── */
 function buildProcessFlow() {
   const processSection = document.getElementById('processo');
@@ -157,50 +236,7 @@ function buildProcessFlow() {
   const oldFlow = processSection.querySelector('.process-flow');
   if (!oldFlow) return;
 
-  const steps = [
-    {
-      num: '01',
-      name: 'Mapeamento',
-      desc: 'Imersão nas operações com reuniões de mapeamento de processos, dores e oportunidades. Entrevistas em campo e análise de dados reais.',
-      items: ['Jornadas operacionais ponta a ponta', 'Identificação de gargalos e perdas', 'Benchmarks e referências setoriais'],
-      output: 'Mapa de oportunidades priorizado',
-      success: false
-    },
-    {
-      num: '02',
-      name: 'Priorização',
-      desc: 'Priorização das oportunidades com base em impacto operacional, esforço e alinhamento estratégico. Decisão coletiva com o time.',
-      items: ['Matriz impacto vs. esforço', 'Alinhamento com liderança', 'Definição do escopo do sprint'],
-      output: 'Backlog priorizado do time',
-      success: false,
-      sync: true
-    },
-    {
-      num: '03',
-      name: 'Ideação',
-      desc: 'Co-criação de ideias de soluções com o time multidisciplinar e especialistas de campo. Protótipos rápidos e validação de hipóteses.',
-      items: ['Workshops de co-criação', 'Prototipação de baixa fidelidade', 'Validação de hipóteses com usuários'],
-      output: 'Conceito de solução validado',
-      success: false
-    },
-    {
-      num: '04',
-      name: 'Desenvolvimento MVP',
-      desc: 'Ciclo de desenvolvimento do MVP com sprints curtos e feedback constante dos operadores de campo. Iterações rápidas até validação.',
-      items: ['Sprints de 2 semanas', 'Testes em ambiente controlado', 'Ajustes contínuos com o SME'],
-      output: 'MVP funcional em campo',
-      success: false,
-      sync: true
-    },
-    {
-      num: '05',
-      name: 'Go Live MVP',
-      desc: 'Go live, testes da solução em produção e medição de resultados reais. Preparação para escala ou novo ciclo de iteração.',
-      items: ['Lançamento em escala piloto', 'Monitoramento de KPIs operacionais', 'Documentação e transferência de conhecimento'],
-      output: 'Solução em produção + aprendizados',
-      success: true
-    }
-  ];
+  const steps = PROCESS_STEPS;
 
   const container = document.createElement('div');
   container.className = 'process-flow-wrapper';
@@ -427,6 +463,54 @@ function toggleStepCard(index, steps, container) {
     cardArea.style.opacity = '1';
     cardArea.style.transition = 'opacity 0.25s ease';
   }, 200);
+}
+
+
+/* ── VISÃO DE PROCESSO EXCLUSIVA PARA PDF ── */
+function buildPrintProcessView() {
+  const processSection = document.getElementById('processo');
+  if (!processSection) return null;
+
+  const old = document.getElementById('print-process-all');
+  if (old) old.remove();
+
+  const wrapper = document.createElement('div');
+  wrapper.id = 'print-process-all';
+  wrapper.className = 'print-only';
+
+  PROCESS_STEPS.forEach((step) => {
+    const row = document.createElement('div');
+    row.className = 'print-step-row';
+    row.innerHTML = `
+      <div class="print-step-left">
+        <div class="print-step-circle ${step.success ? 'print-step-circle--last' : ''}">
+          <span class="print-step-num">${step.num}</span>
+          <span class="print-step-name">${step.name}</span>
+        </div>
+        ${step.sync ? '<div class="print-sync-note">⟳ Sync com stakeholders</div>' : ''}
+      </div>
+      <div class="print-step-right">
+        <h4 class="print-step-title">${step.name}</h4>
+        <p class="print-step-desc">${step.desc}</p>
+        <ul class="print-step-items">
+          ${step.items.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+        <div class="print-step-output ${step.success ? 'print-step-output--success' : ''}">
+          → ${step.output}
+        </div>
+      </div>
+    `;
+    wrapper.appendChild(row);
+  });
+
+  const flowWrapper = processSection.querySelector('.process-flow-wrapper');
+  if (flowWrapper) {
+    flowWrapper.after(wrapper);
+  } else {
+    processSection.querySelector('.container').appendChild(wrapper);
+  }
+
+  return wrapper;
 }
 
 
