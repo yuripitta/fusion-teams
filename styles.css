@@ -1073,29 +1073,25 @@ body {
 }
 
 /* ── ROADMAP ── */
-.roadmap-timeline {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
+.cycle-flow {
+  display: flex;
+  align-items: stretch;
   gap: 0;
-  align-items: start;
+  margin-bottom: 0;
 }
-@media (max-width: 900px) {
-  .roadmap-timeline { grid-template-columns: 1fr; }
-  .timeline-connector { transform: rotate(90deg); margin: 1rem auto; }
-}
-.horizon {
+.cycle-step {
+  flex: 1;
   background: var(--dark-3);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
   border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
   transition: border-color var(--transition);
 }
-.horizon:hover { border-color: rgba(232,112,90,0.3); }
-.horizon-header {
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--border-dark);
-}
-.horizon-badge {
+.cycle-step:hover { border-color: rgba(232,112,90,0.35); }
+.cycle-step-num {
   display: inline-block;
   font-size: 0.68rem;
   font-weight: 800;
@@ -1104,70 +1100,89 @@ body {
   background: rgba(232,112,90,0.15);
   padding: 0.25rem 0.6rem;
   border-radius: 100px;
-  margin-bottom: 0.75rem;
+  align-self: flex-start;
 }
-.horizon-period {
-  font-size: 1.3rem;
+.cycle-step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+.cycle-step-desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.55;
+}
+.cycle-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  flex-shrink: 0;
+  color: var(--coral);
+  font-size: 1.1rem;
+}
+.cycle-loop {
+  margin-top: 0.5rem;
+  padding: 0 0.25rem;
+}
+.cycle-loop-track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cycle-loop-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-dark);
+}
+.cycle-loop-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.cycle-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.cycle-principle {
+  background: var(--dark-3);
+  border: 1px solid var(--border-dark);
+  border-left: 3px solid var(--coral);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.cycle-principle-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--coral-light);
+  text-transform: uppercase;
+}
+.cycle-principle-value {
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--white);
   letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
 }
-.horizon-theme {
-  font-size: 0.82rem;
+.cycle-principle-desc {
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.5);
-  font-weight: 500;
+  line-height: 1.55;
+  margin-top: 0.25rem;
 }
-.horizon-body { padding: 1.75rem 2rem; }
-.horizon-objective {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.65;
-  margin-bottom: 1.25rem;
-}
-.horizon-objective strong { color: rgba(255,255,255,0.9); }
-.horizon-activities {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-.horizon-activities li {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.6);
-  padding-left: 1rem;
-  position: relative;
-  line-height: 1.5;
-}
-.horizon-activities li::before {
-  content: '→';
-  position: absolute; left: 0;
-  color: var(--coral);
-  font-size: 0.7rem;
-}
-.horizon-deliverable {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--coral-light);
-  padding: 0.6rem 0.85rem;
-  background: rgba(232,112,90,0.1);
-  border-radius: 8px;
-  border-left: 2px solid var(--coral);
-}
-.timeline-connector {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
-  padding-top: 3.5rem;
-}
-.connector-line { width: 1px; height: 40px; background: var(--border-dark); }
-.connector-arrow {
-  color: var(--coral);
-  font-size: 1.2rem;
-  margin: 0.25rem 0;
+@media (max-width: 900px) {
+  .cycle-flow { flex-direction: column; }
+  .cycle-connector { transform: rotate(90deg); padding: 0.25rem 0; }
+  .cycle-loop-label { white-space: normal; text-align: center; }
+  .cycle-principles { grid-template-columns: 1fr; }
 }
 
 /* ── GOVERNANCE ── */
@@ -1554,11 +1569,13 @@ body {
   .kpi-meta { font-size: 7.5pt !important; }
 
   /* ── ROADMAP ── */
-  .roadmap-timeline { grid-template-columns: 1fr !important; gap: 12px !important; }
-  .timeline-connector { display: none !important; }
-  .horizon { break-inside: avoid; }
-  .horizon-body { padding: 12px 16px !important; }
-  .horizon-activities li { font-size: 9pt !important; }
+  .cycle-flow { flex-direction: column !important; gap: 10px !important; }
+  .cycle-connector { display: none !important; }
+  .cycle-loop { display: none !important; }
+  .cycle-step { break-inside: avoid; padding: 12px 14px !important; }
+  .cycle-step-desc { font-size: 9pt !important; }
+  .cycle-principles { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .cycle-principle { break-inside: avoid; padding: 10px 14px !important; }
 
   /* ── GOVERNANÇA ── */
   .gov-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
