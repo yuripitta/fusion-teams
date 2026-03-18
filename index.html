@@ -21,6 +21,7 @@
         <li><a href="#time">O Time</a></li>
         <li><a href="#processo">Processo</a></li>
         <li><a href="#pilares">Pilares</a></li>
+        <li><a href="#mudanca">Mudança</a></li>
         <li><a href="#kpis">Indicadores</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#governanca">Governança</a></li>
@@ -432,6 +433,64 @@
           Ponto de sincronização com stakeholders
         </div>
       </div>
+
+      <!-- CRITÉRIOS DE DECISÃO DO MVP -->
+      <div class="fade-up delay-3" style="margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(0,0,0,0.07);">
+        <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9ca3af;margin-bottom:0.5rem;">Gate de Decisão</div>
+        <h3 style="font-size:1.1rem;color:#111827;margin-bottom:0.5rem;">Critérios de Decisão para o MVP</h3>
+        <p style="font-size:0.9rem;color:#6b7280;margin-bottom:1.75rem;">Ao fim de cada ciclo de validação, o time e o PO avaliam o resultado da hipótese e tomam uma das três decisões abaixo — com base em critérios definidos antes do início do teste.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;">
+
+          <!-- Avançar -->
+          <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:1.5rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+              <span style="background:#dcfce7;color:#16a34a;border-radius:20px;padding:0.2rem 0.75rem;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Avançar</span>
+            </div>
+            <div style="font-size:0.88rem;color:#166534;font-weight:600;margin-bottom:0.5rem;">Escalar a solução</div>
+            <ul style="margin:0 0 0 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.35rem;">
+              <li>Critério mínimo de sucesso atingido (definido antes do teste)</li>
+              <li>Aderência da área ≥ ao threshold acordado</li>
+              <li>Impacto operacional mensurável e positivo</li>
+              <li>Área receptiva e com capacidade de absorver a solução</li>
+            </ul>
+          </div>
+
+          <!-- Pivotar -->
+          <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:1.5rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+              <span style="background:#fef3c7;color:#d97706;border-radius:20px;padding:0.2rem 0.75rem;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Pivotar</span>
+            </div>
+            <div style="font-size:0.88rem;color:#92400e;font-weight:600;margin-bottom:0.5rem;">Reformular a hipótese</div>
+            <ul style="margin:0 0 0 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.35rem;">
+              <li>Aprendizado gerado, mas hipótese original inválida</li>
+              <li>Problema confirmado, solução precisa ser reformulada</li>
+              <li>Feedback da área aponta nova direção mais promissora</li>
+              <li>Métricas neutras — sem sinal claro de impacto positivo ou negativo</li>
+            </ul>
+          </div>
+
+          <!-- Cancelar -->
+          <div style="background:#fff1f2;border:1px solid #fecdd3;border-radius:12px;padding:1.5rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+              <span style="background:#fee2e2;color:#dc2626;border-radius:20px;padding:0.2rem 0.75rem;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Cancelar</span>
+            </div>
+            <div style="font-size:0.88rem;color:#991b1b;font-weight:600;margin-bottom:0.5rem;">Encerrar a iniciativa</div>
+            <ul style="margin:0 0 0 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.35rem;">
+              <li>Baixo impacto confirmado após validação em campo</li>
+              <li>Custo-benefício negativo em relação a outras oportunidades</li>
+              <li>Área sem condições de absorver a solução no horizonte planejado</li>
+              <li>Aprendizado documentado e compartilhado para futuras iniciativas</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div style="margin-top:1.25rem;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:1rem 1.25rem;font-size:0.83rem;color:#6b7280;">
+          <span style="font-weight:700;color:#374151;">Importante:</span> Os critérios mínimos de sucesso de cada MVP são definidos pelo PO + SME <em>antes</em> do início do ciclo de validação — não após a coleta dos resultados.
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -505,6 +564,180 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GESTÃO DE MUDANÇA E MATURIDADE -->
+  <section class="section section-light" id="mudanca">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Adoção</span>
+        <h2>Gestão de Mudança e Maturidade</h2>
+        <p>Descentralizar inovação não acontece por decreto. O Fusion Teams reconhece que cada área parte de um ponto diferente e precisa de estratégias específicas de engajamento, comunicação e suporte — calibradas pelo nível de maturidade de cada uma.</p>
+      </div>
+
+      <!-- MODELO DE MATURIDADE -->
+      <div class="fade-up delay-1" style="margin-bottom:3.5rem;">
+        <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9ca3af;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid #e5e7eb;">Modelo de Maturidade das Áreas Fim</div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-bottom:1.25rem;">
+
+          <!-- Nível 1 -->
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+            <div style="background:#fef2f2;border-bottom:1px solid #fecaca;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.75rem;">
+              <span style="background:#fee2e2;color:#dc2626;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:800;flex-shrink:0;">1</span>
+              <div>
+                <div style="font-size:0.95rem;font-weight:700;color:#111827;">Baixa Maturidade</div>
+                <div style="font-size:0.75rem;color:#6b7280;">FT lidera — área co-participa</div>
+              </div>
+            </div>
+            <div style="padding:1.25rem;">
+              <div style="font-size:0.78rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Características</div>
+              <ul style="margin:0 0 1rem 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.3rem;">
+                <li>Processos pouco ou nada documentados</li>
+                <li>Baixa familiaridade com ferramentas digitais</li>
+                <li>Resistência ou ceticismo em relação a mudanças</li>
+                <li>Alta dependência de conhecimento tácito individual</li>
+              </ul>
+              <div style="font-size:0.78rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Atuação do FT</div>
+              <ul style="margin:0 0 0 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.3rem;">
+                <li>Conduz o mapeamento e co-cria com a área</li>
+                <li>Suporte intensivo durante todo o ciclo</li>
+                <li>Workshops de nivelamento antes do MVP</li>
+                <li>Designa agente interno para continuidade</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Nível 2 -->
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+            <div style="background:#fffbeb;border-bottom:1px solid #fde68a;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.75rem;">
+              <span style="background:#fef3c7;color:#d97706;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:800;flex-shrink:0;">2</span>
+              <div>
+                <div style="font-size:0.95rem;font-weight:700;color:#111827;">Maturidade em Desenvolvimento</div>
+                <div style="font-size:0.75rem;color:#6b7280;">FT facilita — área executa junto</div>
+              </div>
+            </div>
+            <div style="padding:1.25rem;">
+              <div style="font-size:0.78rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Características</div>
+              <ul style="margin:0 0 1rem 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.3rem;">
+                <li>Processos parcialmente mapeados</li>
+                <li>Time receptivo a novas ferramentas</li>
+                <li>Já experimenta soluções pontuais de forma autônoma</li>
+                <li>Algum histórico de projetos de melhoria</li>
+              </ul>
+              <div style="font-size:0.78rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Atuação do FT</div>
+              <ul style="margin:0 0 0 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.3rem;">
+                <li>Facilita o processo — área executa com supervisão</li>
+                <li>Transfere ferramentas e metodologias</li>
+                <li>Suporte ativo na validação e nos ajustes</li>
+                <li>Prepara área para assumir próximo ciclo com mais autonomia</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Nível 3 -->
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+            <div style="background:#f0fdf4;border-bottom:1px solid #bbf7d0;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.75rem;">
+              <span style="background:#dcfce7;color:#16a34a;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:800;flex-shrink:0;">3</span>
+              <div>
+                <div style="font-size:0.95rem;font-weight:700;color:#111827;">Alta Maturidade</div>
+                <div style="font-size:0.75rem;color:#6b7280;">Área lidera — FT apoia pontualmente</div>
+              </div>
+            </div>
+            <div style="padding:1.25rem;">
+              <div style="font-size:0.78rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Características</div>
+              <ul style="margin:0 0 1rem 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.3rem;">
+                <li>Processos documentados e versionados</li>
+                <li>Times capacitados e operando ferramentas digitais</li>
+                <li>Cria skills e soluções de forma independente</li>
+                <li>Forte cultura de melhoria contínua</li>
+              </ul>
+              <div style="font-size:0.78rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Atuação do FT</div>
+              <ul style="margin:0 0 0 1rem;padding:0;font-size:0.83rem;color:#374151;display:flex;flex-direction:column;gap:0.3rem;">
+                <li>Suporte técnico pontual quando solicitado</li>
+                <li>Revisão estratégica de soluções de maior complexidade</li>
+                <li>Área como referência e parceira para novas áreas em Nível 1</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:1rem 1.25rem;font-size:0.83rem;color:#6b7280;">
+          <span style="font-weight:700;color:#374151;">Avaliação de maturidade:</span> realizada pelo PO + SME no início de cada ciclo, usando critérios objetivos (documentação existente, histórico de adoção de ferramentas, resultado de workshops anteriores). Revisada a cada trimestre para refletir a evolução real da área.
+        </div>
+      </div>
+
+      <!-- GESTÃO DE MUDANÇA -->
+      <div class="fade-up delay-2">
+        <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9ca3af;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid #e5e7eb;">Gestão de Mudança Organizacional</div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-bottom:1.5rem;">
+
+          <!-- Plano de Adoção -->
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+              <div style="width:36px;height:36px;background:rgba(232,112,90,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">◈</div>
+              <h4 style="font-size:1rem;font-weight:700;color:#111827;margin:0;">Plano de Adoção por Área</h4>
+            </div>
+            <p style="font-size:0.85rem;color:#6b7280;margin-bottom:1rem;">Cada área recebe um plano específico baseado em seu nível de maturidade, com ações, responsáveis e marcos de adoção.</p>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Nível 1:</strong> workshops de nivelamento + acompanhamento semanal por 60 dias</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Nível 2:</strong> mentorias quinzenais + checkpoints de uso em 30 e 60 dias</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Nível 3:</strong> revisão trimestral + suporte sob demanda</span></div>
+            </div>
+          </div>
+
+          <!-- Estratégia de Comunicação -->
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+              <div style="width:36px;height:36px;background:rgba(232,112,90,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">◎</div>
+              <h4 style="font-size:1rem;font-weight:700;color:#111827;margin:0;">Estratégia de Comunicação</h4>
+            </div>
+            <p style="font-size:0.85rem;color:#6b7280;margin-bottom:1rem;">Comunicação proativa e segmentada para reduzir resistência e criar engajamento antes, durante e após cada ciclo.</p>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Antes do ciclo:</strong> reunião de alinhamento com liderança da área (quem, por quê, o que muda)</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Durante:</strong> updates quinzenais para a área via Sprint Review</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Após:</strong> newsletter mensal + resultado do ciclo compartilhado com toda a empresa</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Responsável:</strong> PO do ciclo, com suporte do SME da área</span></div>
+            </div>
+          </div>
+
+          <!-- Métricas de Engajamento -->
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+              <div style="width:36px;height:36px;background:rgba(232,112,90,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">◐</div>
+              <h4 style="font-size:1rem;font-weight:700;color:#111827;margin:0;">Métricas de Engajamento</h4>
+            </div>
+            <p style="font-size:0.85rem;color:#6b7280;margin-bottom:1rem;">Como saberemos que a mudança está sendo absorvida — e não apenas entregue.</p>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Taxa de uso ativo:</strong> % de usuários ativos no Moxe.AI 30 dias pós-workshop</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Adesão pós-workshop:</strong> ≥ 70% com ao menos 1 skill criada ou utilizada em 30 dias</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Skills autônomas:</strong> nº de skills criadas pela própria área (meta: 20 das 100 — OKR 03)</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>NPS da área:</strong> ≥ 7 coletado 30 dias após início do uso autônomo</span></div>
+              <div style="font-size:0.82rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">·</span><span><strong>Progressão de maturidade:</strong> nº de áreas que evoluíram de nível por trimestre</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Agentes de Mudança -->
+        <div style="background:linear-gradient(135deg,rgba(232,112,90,0.06) 0%,rgba(201,64,64,0.06) 100%);border:1px solid rgba(232,112,90,0.2);border-radius:12px;padding:1.5rem 2rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;flex-wrap:wrap;">
+            <span style="background:rgba(232,112,90,0.15);color:#E8705A;border:1px solid rgba(232,112,90,0.3);border-radius:20px;padding:0.25rem 0.85rem;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Agentes Internos de Mudança</span>
+            <span style="font-size:0.8rem;color:#6b7280;">Um catalisador por área — a estratégia de descentralização sustentável</span>
+          </div>
+          <p style="font-size:0.88rem;color:#374151;margin-bottom:0.75rem;">Em cada área fim, o FT identifica e capacita um <strong>agente interno de mudança</strong> — colaborador com influência informal e abertura à inovação — que atua como ponto focal após o handover do ciclo.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
+            <div style="font-size:0.83rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">✓</span><span>Primeiros a usar e validar novas ferramentas</span></div>
+            <div style="font-size:0.83rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">✓</span><span>Suporte de primeiro nível para a equipe da área</span></div>
+            <div style="font-size:0.83rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">✓</span><span>Coletam feedback e trazem melhorias ao FT</span></div>
+            <div style="font-size:0.83rem;color:#374151;display:flex;gap:0.5rem;align-items:flex-start;"><span style="color:#E8705A;font-weight:700;margin-top:1px;">✓</span><span>Habilitam a área a avançar para o próximo nível de maturidade</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -605,30 +838,37 @@
           </div>
 
           <div class="tab-content active" id="tab-operacional" data-label="Indicadores Operacionais">
+            <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:0.75rem 1rem;margin-bottom:1.25rem;font-size:0.82rem;color:#92400e;">
+              <span style="font-weight:700;">Baseline AS-IS:</span> coletado durante a fase de Diagnóstico de cada iniciativa, antes de qualquer intervenção. Serve como referência para medir a evolução real (TO-BE).
+            </div>
             <div class="kpi-grid">
               <div class="kpi-card">
                 <div class="kpi-icon">⏱</div>
                 <div class="kpi-name">Tempo de Ciclo</div>
                 <div class="kpi-desc">Redução do tempo médio de execução de processos críticos da operação após implementação da solução.</div>
                 <div class="kpi-meta">Meta: ≥ 20% de redução no ciclo piloto</div>
+                <div style="margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid #e5e7eb;font-size:0.75rem;color:#9ca3af;"><span style="font-weight:700;color:#6b7280;">Baseline:</span> tempo médio atual do processo mapeado no Diagnóstico</div>
               </div>
               <div class="kpi-card">
                 <div class="kpi-icon">✓</div>
                 <div class="kpi-name">Aderência ao Processo</div>
                 <div class="kpi-desc">Percentual de etapas executadas conforme o novo processo definido, medido diretamente no campo.</div>
                 <div class="kpi-meta">Meta: ≥ 85% de aderência em 30 dias</div>
+                <div style="margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid #e5e7eb;font-size:0.75rem;color:#9ca3af;"><span style="font-weight:700;color:#6b7280;">Baseline:</span> % de conformidade observada antes da intervenção</div>
               </div>
               <div class="kpi-card">
                 <div class="kpi-icon">↯</div>
                 <div class="kpi-name">Índice de Retrabalho</div>
                 <div class="kpi-desc">Redução de etapas refeitas ou correções necessárias após a implementação da solução.</div>
                 <div class="kpi-meta">Meta: ≥ 30% de redução</div>
+                <div style="margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid #e5e7eb;font-size:0.75rem;color:#9ca3af;"><span style="font-weight:700;color:#6b7280;">Baseline:</span> frequência/volume de retrabalho atual registrado no Diagnóstico</div>
               </div>
               <div class="kpi-card">
                 <div class="kpi-icon">◈</div>
                 <div class="kpi-name">Eficiência Operacional</div>
                 <div class="kpi-desc">Relação entre output entregue e recursos consumidos (tempo, pessoas, custo) antes e depois da solução.</div>
                 <div class="kpi-meta">Meta: Melhora mensurável em 2 ciclos</div>
+                <div style="margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid #e5e7eb;font-size:0.75rem;color:#9ca3af;"><span style="font-weight:700;color:#6b7280;">Baseline:</span> razão output/recursos atual, coletada antes do MVP</div>
               </div>
             </div>
           </div>
@@ -848,7 +1088,7 @@
           </div>
         </div>
 
-        <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+        <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;">
           <div style="text-align:center;">
             <div style="font-size:0.7rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Duração por ciclo</div>
             <div style="font-size:1rem;font-weight:700;color:#fff;">2 – 6 semanas</div>
@@ -862,6 +1102,42 @@
             <div style="font-size:1rem;font-weight:700;color:#fff;">Conhecimento transferido</div>
           </div>
         </div>
+
+        <!-- CAPACIDADE OPERACIONAL DO TIME -->
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.75rem;">
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(232,112,90,0.8);margin-bottom:1.25rem;">Capacidade Operacional do Time</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;">
+              <div style="font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.09em;margin-bottom:0.4rem;">Máx. iniciativas simultâneas</div>
+              <div style="font-size:1.25rem;font-weight:800;color:#E8705A;line-height:1;">até 3</div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:0.35rem;">em estágios distintos do ciclo</div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;">
+              <div style="font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.09em;margin-bottom:0.4rem;">Cadência de entrega</div>
+              <div style="font-size:1.25rem;font-weight:800;color:#E8705A;line-height:1;">≥ 1 MVP/mês</div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:0.35rem;">em campo para validação</div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;">
+              <div style="font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.09em;margin-bottom:0.4rem;">Capacidade por trimestre</div>
+              <div style="font-size:1.25rem;font-weight:800;color:#E8705A;line-height:1;">3–4 ciclos</div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:0.35rem;">completos (do diagnóstico ao handover)</div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;">
+              <div style="font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.09em;margin-bottom:0.4rem;">Limite por área/trimestre</div>
+              <div style="font-size:1.25rem;font-weight:800;color:#E8705A;line-height:1;">1–2 ciclos</div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:0.35rem;">para evitar sobrecarga do SME da área</div>
+            </div>
+
+          </div>
+          <div style="margin-top:1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:0.85rem 1rem;font-size:0.8rem;color:rgba(255,255,255,0.45);">
+            <span style="font-weight:700;color:rgba(255,255,255,0.6);">Critério de sobrecarga:</span> quando a demanda superar a capacidade máxima, novas solicitações entram em fila priorizada pelo Framework de Priorização (ver Governança) — sem negociação informal de urgências.
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -912,6 +1188,60 @@
           </div>
         </div>
 
+        <!-- FRAMEWORK DE PRIORIZAÇÃO -->
+        <div class="gov-section" style="grid-column:1/-1;">
+          <h3>Framework de Priorização — Matriz Impacto × Esforço</h3>
+          <p style="font-size:0.88rem;color:#6b7280;margin-bottom:1.5rem;">Aplicado pelo PO + SME no Steering Mensal para decidir o que entra no pipeline. Elimina a negociação informal de urgências e garante alinhamento estratégico antes de alocar capacidade do time.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e5e7eb;border-radius:12px;overflow:hidden;margin-bottom:1.25rem;">
+
+            <!-- Quick Wins -->
+            <div style="background:#f0fdf4;padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;">
+                <span style="background:#dcfce7;color:#16a34a;border-radius:20px;padding:0.15rem 0.65rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Quick Wins</span>
+                <span style="font-size:0.72rem;color:#6b7280;">Alto impacto · Baixo esforço</span>
+              </div>
+              <div style="font-size:0.88rem;font-weight:700;color:#111827;margin-bottom:0.4rem;">Prioridade máxima — fazer primeiro</div>
+              <div style="font-size:0.82rem;color:#374151;">Geram valor imediato com menor investimento. Excelentes para construir credibilidade do time junto às áreas.</div>
+            </div>
+
+            <!-- Projetos Estratégicos -->
+            <div style="background:#eff6ff;padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;">
+                <span style="background:#dbeafe;color:#1d4ed8;border-radius:20px;padding:0.15rem 0.65rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Estratégicos</span>
+                <span style="font-size:0.72rem;color:#6b7280;">Alto impacto · Alto esforço</span>
+              </div>
+              <div style="font-size:0.88rem;font-weight:700;color:#111827;margin-bottom:0.4rem;">Planejar com critério — entram no roadmap</div>
+              <div style="font-size:0.82rem;color:#374151;">Alto retorno, mas exigem maior alocação de capacidade. Requerem decisão da liderança no Steering.</div>
+            </div>
+
+            <!-- Fill-ins -->
+            <div style="background:#fafafa;padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;">
+                <span style="background:#f3f4f6;color:#6b7280;border-radius:20px;padding:0.15rem 0.65rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Fill-ins</span>
+                <span style="font-size:0.72rem;color:#6b7280;">Baixo impacto · Baixo esforço</span>
+              </div>
+              <div style="font-size:0.88rem;font-weight:700;color:#111827;margin-bottom:0.4rem;">Fazer somente se houver folga de capacidade</div>
+              <div style="font-size:0.82rem;color:#374151;">Não bloqueiam o backlog principal. Não devem consumir capacidade planejada de ciclos em andamento.</div>
+            </div>
+
+            <!-- Descartar -->
+            <div style="background:#fff1f2;padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;">
+                <span style="background:#fee2e2;color:#dc2626;border-radius:20px;padding:0.15rem 0.65rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Descartar</span>
+                <span style="font-size:0.72rem;color:#6b7280;">Baixo impacto · Alto esforço</span>
+              </div>
+              <div style="font-size:0.88rem;font-weight:700;color:#111827;margin-bottom:0.4rem;">Não entram no pipeline</div>
+              <div style="font-size:0.82rem;color:#374151;">Consomem capacidade sem retorno proporcional. Documentar a decisão e comunicar à área solicitante com justificativa clara.</div>
+            </div>
+
+          </div>
+
+          <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:1rem 1.25rem;font-size:0.82rem;color:#6b7280;">
+            <span style="font-weight:700;color:#374151;">Como usar:</span> Para cada nova demanda, o PO e o SME preenchem dois campos — impacto esperado (1–5) e esforço estimado (1–5) — e plotam na matriz durante o Steering Mensal. O resultado define a posição no pipeline antes de qualquer compromisso com a área solicitante.
+          </div>
+        </div>
+
         <div class="gov-section">
           <h3>Modelo de Decisão</h3>
           <div class="decision-model">
@@ -919,24 +1249,28 @@
               <div class="decision-who">Time Fusion</div>
               <div class="decision-what">
                 <strong>Decide autonomamente:</strong> Priorização do sprint, abordagem técnica, metodologia de teste, detalhes de implementação do MVP.
+                <div style="margin-top:0.45rem;display:inline-flex;align-items:center;gap:0.35rem;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.72rem;font-weight:700;color:#16a34a;">SLA: decisão dentro do sprint em andamento</div>
               </div>
             </div>
             <div class="decision-level">
               <div class="decision-who">PO + SME</div>
               <div class="decision-what">
                 <strong>Decidem em conjunto:</strong> Hipóteses a testar, critérios de sucesso do MVP, ajustes de escopo durante o sprint.
+                <div style="margin-top:0.45rem;display:inline-flex;align-items:center;gap:0.35rem;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.72rem;font-weight:700;color:#16a34a;">SLA: até 24h após solicitação formal</div>
               </div>
             </div>
             <div class="decision-level">
               <div class="decision-who">Steering Mensal</div>
               <div class="decision-what">
-                <strong>Decide com liderança:</strong> Aprovação de escala, realocação de prioridades estratégicas, recursos adicionais.
+                <strong>Decide com liderança:</strong> Aprovação de escala, realocação de prioridades estratégicas, novos itens no pipeline (via Matriz Impacto × Esforço), recursos adicionais.
+                <div style="margin-top:0.45rem;display:inline-flex;align-items:center;gap:0.35rem;background:rgba(234,179,8,0.1);border:1px solid rgba(234,179,8,0.3);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.72rem;font-weight:700;color:#b45309;">SLA: até 5 dias úteis após o Steering</div>
               </div>
             </div>
             <div class="decision-level">
               <div class="decision-who">PO + Liderança</div>
               <div class="decision-what">
                 <strong>Desempate de impasse:</strong> Quando time e stakeholder operacional entram em conflito sobre prioridade ou escopo — resolução em até 48h para não travar o sprint em andamento.
+                <div style="margin-top:0.45rem;display:inline-flex;align-items:center;gap:0.35rem;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.72rem;font-weight:700;color:#dc2626;">SLA: até 48h — impasse não pode travar sprint</div>
               </div>
             </div>
           </div>
@@ -1006,12 +1340,22 @@
 
           <div style="background:#fff8f6;border:1px solid #fde8e2;border-radius:10px;padding:1.25rem;">
             <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;">
-              <span style="background:#dcfce7;color:#16a34a;border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">Baixo</span>
+              <span style="background:#fef3c7;color:#d97706;border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">Médio</span>
               <strong style="font-size:0.9rem;color:#111827;">Desalinhamento de prioridades entre áreas</strong>
             </div>
-            <p style="font-size:0.83rem;color:#6b7280;margin:0 0 0.6rem;">Disputas por alocação do time ou por ordem de atendimento das iniciativas.</p>
+            <p style="font-size:0.83rem;color:#6b7280;margin:0 0 0.6rem;">Disputas por alocação do time ou por ordem de atendimento das iniciativas — risco político relevante em ambientes com múltiplas áreas competindo por capacidade limitada.</p>
             <div style="font-size:0.78rem;font-weight:700;color:#374151;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.3rem;">Mitigação</div>
-            <p style="font-size:0.83rem;color:#374151;margin:0;">Steering mensal com representantes de todas as áreas envolvidas para revisão de prioridades de forma conjunta e transparente.</p>
+            <p style="font-size:0.83rem;color:#374151;margin:0;">Aplicar o Framework de Priorização (Matriz Impacto × Esforço) no Steering Mensal. Decisão de pipeline é baseada em critérios objetivos — não em pressão política ou relacionamento com o time.</p>
+          </div>
+
+          <div style="background:#fff8f6;border:1px solid #fde8e2;border-radius:10px;padding:1.25rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;">
+              <span style="background:#fee2e2;color:#ef4444;border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">Alto</span>
+              <strong style="font-size:0.9rem;color:#111827;">Resistência cultural à mudança</strong>
+            </div>
+            <p style="font-size:0.83rem;color:#6b7280;margin:0 0 0.6rem;">Áreas não aderem às soluções entregues por resistência à mudança de processos ou por baixa maturidade digital — gerando entregas sem uso real.</p>
+            <div style="font-size:0.78rem;font-weight:700;color:#374151;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.3rem;">Mitigação</div>
+            <p style="font-size:0.83rem;color:#374151;margin:0;">Aplicar o Modelo de Maturidade antes de iniciar cada ciclo para calibrar o nível de suporte. Executar o Plano de Gestão de Mudança com estratégia de comunicação e agentes internos de adoção por área.</p>
           </div>
 
         </div>

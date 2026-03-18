@@ -1449,7 +1449,7 @@ body {
 
   /* Quebra de página antes de cada seção */
   #o-que-e, #torres, #operacoes, #time,
-  #processo, #pilares, #kpis, #roadmap, #governanca {
+  #processo, #pilares, #mudanca, #kpis, #roadmap, #governanca, #transicao {
     page-break-before: always;
     break-before: page;
   }
@@ -1544,7 +1544,29 @@ body {
 
   /* ── PILARES ── */
   .section-dark { background: #1C1C26 !important; color: white !important; }
-  .pilares-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  /* Espelha exatamente o que funciona no #time:
+     - margin-bottom reduzido no header (o padrão 4rem empurra o grid para fora da página)
+     - break-inside: avoid no próprio header (impede que h2 e p se separem internamente)
+     - break-after: avoid no header + break-before: avoid no grid
+     - pilares-grid usa flexbox em vez de CSS Grid (Chrome respeita break-before em flex, não em grid) */
+  #pilares .section-header {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    margin-bottom: 1.5rem !important;
+  }
+  #pilares .pilares-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+  #pilares .pilar-card {
+    flex: 0 0 calc(50% - 5px) !important;
+    box-sizing: border-box !important;
+  }
   .pilar-card { background: #252532 !important; border: 1px solid #2E2E3E !important; padding: 14px !important; break-inside: avoid; }
   .pilar-content p { font-size: 9pt !important; }
 
@@ -1590,8 +1612,116 @@ body {
   .footer-meta { align-items: flex-start !important; }
   .footer-meta span { font-size: 8pt !important; }
 
-  /* Evitar quebra interna */
+  /* Evitar quebra interna — elementos com classes */
   .card-feature, .not-card, .tower, .kpi-card,
   .pilar-card, .ritual-item, .challenge-item,
   .value-item, .decision-level { break-inside: avoid; }
+
+  /* ── CRITÉRIOS DE DECISÃO MVP ── */
+  /* O bloco inteiro deve evitar quebra; cada card individualmente também */
+  #processo .fade-up.delay-3 {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  /* Cada card colorido (Avançar / Pivotar / Cancelar) */
+  #processo .fade-up.delay-3 > div[style*="display:grid"] > div {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* ── REGRA GERAL: filhos diretos de grids inline em todas as seções ── */
+  /* Cobre OKR cards, Q1-Q4 roadmap, maturidade cards, gestão de mudança cards,
+     governança framework quadrants, cards de riscos e capacity chips */
+  #kpis      div[style*="display:grid"] > div,
+  #mudanca   div[style*="display:grid"] > div,
+  #roadmap   div[style*="display:grid"] > div,
+  #governanca div[style*="display:grid"] > div,
+  #transicao div[style*="display:grid"] > div {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* ── SEÇÃO MUDANÇA — containers que não são filhos diretos de grid ── */
+  /* Bloco de Agentes Internos de Mudança */
+  #mudanca .fade-up.delay-2 > div[style*="border:1px solid rgba(232,112,90"] {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  /* Nota de avaliação de maturidade */
+  #mudanca .fade-up.delay-1 > div[style*="background:#f9fafb"] {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* ── ROADMAP — bloco de capacidade operacional ── */
+  #roadmap .fade-up.delay-2 > div[style*="border-top:1px solid"] {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* ── GOVERNANÇA — framework e notas de uso ── */
+  #governanca .gov-section[style*="grid-column"] {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  #governanca div[style*="background:#f9fafb"] {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* ── KPIS — nota de baseline ── */
+  #kpis div[style*="background:#fffbeb"] {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* ── TRANSIÇÃO — cards de produto e FT ── */
+  #transicao .card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* ── SEÇÕES COM HEADER + GRID: garantir que header não fique órfão ── */
+  #mudanca .section-header    { break-after: avoid !important; page-break-after: avoid !important; }
+  #kpis .section-header       { break-after: avoid !important; page-break-after: avoid !important; }
+  #roadmap .section-header    { break-after: avoid !important; page-break-after: avoid !important; }
+  #governanca .section-header { break-after: avoid !important; page-break-after: avoid !important; }
+  #transicao .section-header  { break-after: avoid !important; page-break-after: avoid !important; }
+
+  /* ═══════════════════════════════════════════════════════════
+     CORREÇÕES PONTUAIS DE QUEBRA DE PÁGINA (por bloco)
+  ═══════════════════════════════════════════════════════════ */
+
+  /* 1. Caso em Campo (Bradesco) — bloco inteiro para a próxima página */
+  #operacoes .fade-up.delay-2 {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* 2. Indicadores de Acompanhamento — bloco inteiro para a próxima página */
+  #kpis .fade-up.delay-2 {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* 3. Indicadores de Negócio (aba) — iniciar em nova página */
+  #tab-negocio {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* 4. Capacidade Operacional do Time — bloco inteiro para a próxima página
+     (é o div com border-top dentro do .fade-up.delay-2 do roadmap) */
+  #roadmap .fade-up.delay-2 > div[style*="border-top:1px solid rgba(255,255,255,0.1)"] {
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* 5. Fusion Teams — Iniciativas em Transição — bloco para nova página */
+  #transicao .fade-up.delay-2 {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
 }
